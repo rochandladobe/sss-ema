@@ -1,33 +1,27 @@
+@import url('brand.css');
+
 /*
  * Amtrak EDS - styles.css
- * Amtrak brand: Blue #003082, Red #D52B1E
+ * Amtrak brand: Navy #002436, Blue #167fa6
  */
-
-/* fallback fonts */
-@font-face {
-  font-family: helvetica-neue-fallback;
-  size-adjust: 100.06%;
-  ascent-override: 95%;
-  src: local('Arial');
-}
 
 :root {
   /* colors */
   --color-white: #fff;
   --color-black: #1a1a1a;
-  --color-gray-light: #f5f5f5;
+  --color-gray-light: #f0f0f0;
   --color-gray-mid: #d9d9d9;
   --color-gray: #767676;
-  --color-amtrak-blue: #003082;
-  --color-amtrak-blue-dark: #001f56;
-  --color-amtrak-blue-light: #0050cc;
-  --color-amtrak-red: #d52b1e;
-  --color-link: #003082;
-  --color-link-hover: #0050cc;
+  --color-amtrak-navy: #002436;
+  --color-amtrak-blue: #167fa6;
+  --color-amtrak-blue-dark: #004b6e;
+  --color-amtrak-blue-light: #00537e;
+  --color-link: var(--link-color);
+  --color-link-hover: var(--link-hover-color);
 
   /* fonts */
-  --body-font-family: 'Helvetica Neue', helvetica-neue-fallback, helvetica, arial, sans-serif;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: "Open Sans", sans-serif;
+  --heading-font-family: "Open Sans", sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
@@ -36,15 +30,15 @@
   --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 36px;
-  --heading-font-size-l: 28px;
-  --heading-font-size-m: 22px;
+  --heading-font-size-xxl: 36px;
+  --heading-font-size-xl: 28px;
+  --heading-font-size-l: 24px;
+  --heading-font-size-m: 20px;
   --heading-font-size-s: 18px;
   --heading-font-size-xs: 16px;
 
   /* nav height */
-  --nav-height: 72px;
+  --nav-height: 99px;
 }
 
 @media (width >= 900px) {
@@ -72,8 +66,8 @@ body {
   margin: 0;
   font-family: var(--body-font-family);
   line-height: 1.6;
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--text-color);
+  background-color: var(--background-color);
   display: none;
 }
 
@@ -87,10 +81,11 @@ header {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: 0.5em;
+  color: var(--heading-color);
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
@@ -140,17 +135,19 @@ a:hover {
 /* buttons */
 a.button:any-link, button {
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
+  font-size: var(--body-font-size-s);
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   border: 2px solid transparent;
   padding: 12px 24px;
   cursor: pointer;
   color: var(--color-white);
-  background-color: var(--color-amtrak-blue);
+  background-color: var(--button-primary-bg);
   border-radius: 4px;
   white-space: nowrap;
   overflow: hidden;
@@ -160,7 +157,7 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
-  background-color: var(--color-amtrak-blue-dark);
+  background-color: var(--button-primary-hover-bg);
   text-decoration: none;
 }
 
@@ -173,6 +170,10 @@ a.button.secondary, button.secondary {
 a.button.secondary:hover, button.secondary:hover {
   background-color: var(--color-amtrak-blue);
   color: var(--color-white);
+}
+
+main .button-container {
+  display: inline;
 }
 
 main img {
@@ -213,12 +214,23 @@ main .section {
 
 /* section metadata */
 main .section.light { background-color: var(--color-gray-light); }
-main .section.dark {
-  background-color: var(--color-amtrak-blue);
+main .section.grey {
+  background-color: var(--color-gray-light);
+}
+main .section.dark,
+main .section.dark-blue {
+  background-color: var(--color-amtrak-navy);
   color: var(--color-white);
 }
 main .section.dark h1,
 main .section.dark h2,
-main .section.dark h3 {
+main .section.dark h3,
+main .section.dark-blue h1,
+main .section.dark-blue h2,
+main .section.dark-blue h3 {
+  color: var(--color-white);
+}
+main .section.dark a:any-link,
+main .section.dark-blue a:any-link {
   color: var(--color-white);
 }

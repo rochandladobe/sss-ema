@@ -1,4 +1,8 @@
-import { getMetadata } from '../../scripts/aem.js';
+function getMetadata(name) {
+  const attr = name && name.includes(':') ? 'property' : 'name';
+  const meta = document.head.querySelector(`meta[${attr}="${name}"]`);
+  return meta && meta.content;
+}
 
 function toggleMenu(nav, navSections, forceExpand) {
   const expanded = forceExpand !== undefined ? !forceExpand : nav.getAttribute('aria-expanded') === 'true';
@@ -12,7 +16,6 @@ export default async function decorate(block) {
   const resp = await fetch(`${navPath}.plain.html`);
 
   if (!resp.ok) {
-    // Fallback: render inline nav for dev
     block.innerHTML = `
       <div class="nav-wrapper">
         <nav class="nav" aria-expanded="false">
@@ -27,13 +30,16 @@ export default async function decorate(block) {
               <li><a href="/train-status">Train Status</a></li>
               <li><a href="/my-trip">My Trip</a></li>
               <li><a href="/plan">Plan</a></li>
-              <li><a href="/schedules">Schedules</a></li>
               <li><a href="/deals">Deals</a></li>
+              <li><a href="/onboard">Onboard</a></li>
             </ul>
           </div>
           <div class="nav-tools">
             <a href="/guest-rewards" class="nav-tool">Guest Rewards</a>
-            <button class="nav-hamburger" aria-label="Open navigation" aria-controls="nav" aria-expanded="false">
+            <a href="#" class="nav-tool">Sign In</a>
+          </div>
+          <div class="nav-hamburger">
+            <button type="button" aria-controls="nav" aria-label="Open navigation">
               <span class="nav-hamburger-icon"></span>
             </button>
           </div>
@@ -41,7 +47,8 @@ export default async function decorate(block) {
       </div>`;
     const hamburger = block.querySelector('.nav-hamburger');
     const nav = block.querySelector('.nav');
-    hamburger?.addEventListener('click', () => toggleMenu(nav));
+    const navSections = block.querySelector('.nav-sections');
+    hamburger?.addEventListener('click', () => toggleMenu(nav, navSections));
     return;
   }
 
@@ -56,17 +63,33 @@ export default async function decorate(block) {
     if (section) section.classList.add(`nav-${c}`);
   });
 
-  // Hamburger toggle
+  const navSections = nav.querySelector('.nav-sections');
+  if (navSections) {
+    navSections.querySelectorAll('.button').forEach((button) => {
+      button.className = '';
+      const buttonContainer = button.closest('.button-container');
+      if (buttonContainer) buttonContainer.className = '';
+    });
+  }
+
+  const navBrand = nav.querySelector('.nav-brand');
+  if (navBrand) {
+    navBrand.querySelectorAll('.button').forEach((button) => {
+      button.className = '';
+      const buttonContainer = button.closest('.button-container');
+      if (buttonContainer) buttonContainer.className = '';
+    });
+  }
+
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
     <span class="nav-hamburger-icon"></span>
   </button>`;
-  hamburger.addEventListener('click', () => toggleMenu(nav));
+  hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
   nav.setAttribute('aria-expanded', 'false');
 
-  decorateIcons(nav);
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);

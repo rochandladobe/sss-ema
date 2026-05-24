@@ -1,0 +1,82 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "url": "https://www.amtrak.com",
+      "blocks": [
+        {
+          "name": "booking-widget",
+          "selector": ".fareFinder, amt-md-farefinder, .md-farefinder",
+          "sectionStyle": "grey"
+        },
+        {
+          "name": "hero-banner",
+          "selector": ".heroimageContainer, .heroimage"
+        },
+        {
+          "name": "carousel-promo",
+          "selector": ".carousel.special-offer-carousel .cmp-carousel"
+        },
+        {
+          "name": "tabs-onboard",
+          "selector": ".tabs.onboarding-experience-tabs .cmp-tabs"
+        },
+        {
+          "name": "carousel-features",
+          "selector": ".carousel-feature-area.homepage-carousel"
+        },
+        {
+          "name": "hero-rewards",
+          "selector": ".cmp-experiencefragment--join-amtrak-guest-rewards-banner .teaser.guest-rewards",
+          "sectionStyle": "dark-blue"
+        }
+      ],
+      "sections": [
+        {
+          "name": "Booking Widget",
+          "selector": ".cmp-experiencefragment--fareFinder",
+          "style": "grey"
+        },
+        {
+          "name": "Hero Banner",
+          "selector": ".heroimageContainer"
+        },
+        {
+          "name": "Deals & Promotions",
+          "selector": ".carousel.special-offer-carousel"
+        },
+        {
+          "name": "Onboard Experience",
+          "selector": ".tabs.onboarding-experience-tabs"
+        },
+        {
+          "name": "Travel Tools",
+          "selector": ".carousel-feature-area.basecomponent"
+        },
+        {
+          "name": "Guest Rewards Banner",
+          "selector": ".cmp-experiencefragment--join-amtrak-guest-rewards-banner",
+          "style": "dark-blue"
+        }
+      ],
+      "urls": [
+        "https://www.amtrak.com"
+      ]
+    },
+    {
+      "name": "station-detail",
+      "url": "https://www.amtrak.com/stations/aba",
+      "blocks": [
+        {
+          "name": "hero-station",
+          "selector": "div.hero-banner-and-info.basecomponent"
+        },
+        {
+          "name": "tabs-station",
+          "selector": "div.iparsys.parsys"
+        }
+      ],
+      "urls": []
+    }
+  ]
+}
