@@ -1,0 +1,30 @@
+:root {
+  --heading-font-family: "Merriweather", serif;
+  --body-font-family: "Source Sans Pro", sans-serif;
+  --background-color: #ffffff;
+  --text-color: #1b1b1b;
+  --heading-color: #162e51;
+  --link-color: #005ea2;
+  --link-hover-color: #1a4480;
+  --nav-background: #162e51;
+  --nav-text-color: #ffffff;
+  --footer-background: #162e51;
+  --footer-text-color: #ffffff;
+  --button-primary-bg: #005ea2;
+  --button-primary-color: #ffffff;
+  --button-primary-hover-bg: #1a4480;
+  --button-secondary-bg: transparent;
+  --button-secondary-color: #005ea2;
+  --button-secondary-border: #005ea2;
+  --section-dark-bg: #162e51;
+  --section-dark-color: #ffffff;
+  --section-padding: 48px 0;
+  --nav-height: 80px;
+  --content-max-width: 1200px;
+  --heading-size-xxl: 39px;
+  --heading-size-xl: 30px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

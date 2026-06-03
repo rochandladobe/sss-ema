@@ -1,0 +1,80 @@
+.hero-gov-container .hero-gov-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-gov {
+  position: relative;
+  padding: 80px 24px;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  background-color: #162e51;
+  overflow: hidden;
+}
+
+.hero-gov > div {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-gov h1 {
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-size: 39px;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.hero-gov p {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.hero-gov a.button:any-link {
+  background-color: #005ea2;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 8px;
+}
+
+.hero-gov a.button:hover {
+  background-color: #1a4480;
+}
+
+.hero-gov picture {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.hero-gov img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+@media (width >= 900px) {
+  .hero-gov {
+    min-height: 500px;
+    padding: 100px 48px;
+  }
+
+  .hero-gov h1 {
+    font-size: 48px;
+  }
+
+  .hero-gov p {
+    font-size: 18px;
+  }
+}
