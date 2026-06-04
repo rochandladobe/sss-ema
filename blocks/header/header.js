@@ -20,23 +20,21 @@ export default async function decorate(block) {
       <div class="nav-wrapper">
         <nav class="nav" aria-expanded="false">
           <div class="nav-brand">
-            <a href="/" aria-label="Amtrak">
-              <img src="/icons/amtrak-logo.svg" alt="Amtrak logo" width="120" height="40"/>
+            <a href="/" aria-label="Selective Service System">
+              <span>Selective Service System</span>
             </a>
           </div>
           <div class="nav-sections">
             <ul>
-              <li><a href="/book">Book</a></li>
-              <li><a href="/train-status">Train Status</a></li>
-              <li><a href="/my-trip">My Trip</a></li>
-              <li><a href="/plan">Plan</a></li>
-              <li><a href="/deals">Deals</a></li>
-              <li><a href="/onboard">Onboard</a></li>
+              <li><a href="/register">Register</a></li>
+              <li><a href="/verify">Verify</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div class="nav-tools">
-            <a href="/guest-rewards" class="nav-tool">Guest Rewards</a>
-            <a href="#" class="nav-tool">Sign In</a>
+            <a href="/register" class="nav-tool">Register Now</a>
           </div>
           <div class="nav-hamburger">
             <button type="button" aria-controls="nav" aria-label="Open navigation">
