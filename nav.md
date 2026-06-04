@@ -1,29 +1,21 @@
-- [![Amtrak logo](/icons/amtrak-logo.svg)](/)
+- [![Selective Service System](/icons/sss-logo.svg)](/)
 
 ---
 
-- **Book**
-  - [Book a Trip](/book)
-  - [Rail Passes](/deals-discounts/multi-ride-rail-passes)
-  - [Auto Train](/auto-train-experience)
-  - [Group Travel](/group-travel)
-- **Plan**
-  - [Trip Planning Map](/plan-your-trip)
-  - [Stations](/stations)
-  - [Routes](/routes)
-  - [Onboard](/onboard)
-  - [Deals & Promotions](/deals-discounts)
-- **Train Status**
-  - [Track Your Train](/track-your-train)
-  - [Stations & Schedules](/stations)
-- **My Trip**
-  - [Manage Reservations](/my-trip)
-  - [Changes & Refunds](/changes-refunds)
-  - [Baggage](/baggage-policy)
-- [Deals](/deals-discounts)
-- [Onboard](/onboard)
+- **Register**
+  - [Register Now](/register)
+  - [Who Needs to Register](/register/who-needs-to-register)
+  - [Benefits & Penalties](/register/benefits-and-penalties)
+  - [Men 26 and Older](/register/men-26-and-older)
+- **Verify**
+  - [Verify Status](/verify)
+  - [Update Your Information](/verify/update-info)
+- [FAQ](/faq)
+- [News & Media](/news-and-media)
+- [About](/about)
+- [Contact](/contact)
 
 ---
 
-- [Guest Rewards](/guestrewards/home)
-- [Sign In](#)
+- [Register](/register)
+- [Verify](/verify)

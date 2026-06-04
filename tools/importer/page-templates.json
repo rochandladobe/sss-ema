@@ -2,80 +2,42 @@
   "templates": [
     {
       "name": "homepage",
-      "url": "https://www.amtrak.com",
+      "url": "https://www.sss.gov/",
       "blocks": [
         {
-          "name": "booking-widget",
-          "selector": ".fareFinder, amt-md-farefinder, .md-farefinder",
-          "sectionStyle": "grey"
+          "name": "hero-gov",
+          "selector": ".usa-hero, .hero-section, .wp-block-cover.hero"
         },
         {
-          "name": "hero-banner",
-          "selector": ".heroimageContainer, .heroimage"
+          "name": "columns-cta",
+          "selector": ".wp-block-columns.registration-columns, .registration-section .wp-block-columns"
         },
         {
-          "name": "carousel-promo",
-          "selector": ".carousel.special-offer-carousel .cmp-carousel"
-        },
-        {
-          "name": "tabs-onboard",
-          "selector": ".tabs.onboarding-experience-tabs .cmp-tabs"
-        },
-        {
-          "name": "carousel-features",
-          "selector": ".carousel-feature-area.homepage-carousel"
-        },
-        {
-          "name": "hero-rewards",
-          "selector": ".cmp-experiencefragment--join-amtrak-guest-rewards-banner .teaser.guest-rewards",
-          "sectionStyle": "dark-blue"
+          "name": "cards-service",
+          "selector": ".service-cards, .wp-block-group.cards-grid, .additional-groups .wp-block-group"
         }
       ],
       "sections": [
         {
-          "name": "Booking Widget",
-          "selector": ".cmp-experiencefragment--fareFinder",
-          "style": "grey"
+          "name": "Hero",
+          "selector": ".usa-hero, .hero-section"
         },
         {
-          "name": "Hero Banner",
-          "selector": ".heroimageContainer"
+          "name": "Registration Info",
+          "selector": ".registration-section"
         },
         {
-          "name": "Deals & Promotions",
-          "selector": ".carousel.special-offer-carousel"
-        },
-        {
-          "name": "Onboard Experience",
-          "selector": ".tabs.onboarding-experience-tabs"
-        },
-        {
-          "name": "Travel Tools",
-          "selector": ".carousel-feature-area.basecomponent"
-        },
-        {
-          "name": "Guest Rewards Banner",
-          "selector": ".cmp-experiencefragment--join-amtrak-guest-rewards-banner",
-          "style": "dark-blue"
+          "name": "Additional Groups",
+          "selector": ".additional-groups",
+          "style": "dark"
         }
       ],
-      "urls": [
-        "https://www.amtrak.com"
-      ]
+      "urls": []
     },
     {
-      "name": "station-detail",
-      "url": "https://www.amtrak.com/stations/aba",
-      "blocks": [
-        {
-          "name": "hero-station",
-          "selector": "div.hero-banner-and-info.basecomponent"
-        },
-        {
-          "name": "tabs-station",
-          "selector": "div.iparsys.parsys"
-        }
-      ],
+      "name": "content-page",
+      "url": "https://www.sss.gov/about",
+      "blocks": [],
       "urls": []
     }
   ]

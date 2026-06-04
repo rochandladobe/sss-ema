@@ -1,46 +1,34 @@
----
+[![Selective Service System](/icons/sss-logo.svg)](/)
 
-Download the Amtrak App.
+**SELECTIVE SERVICE SYSTEM**
 
-[Play Store](https://play.google.com/store/apps/details?id=com.amtrak.rider&hl=en_US&gl=US) | [App Store](https://apps.apple.com/us/app/amtrak/id405074003)
+Call: [847-688-6888](tel:847-688-6888) or toll-free: [888-655-1825](tel:888-655-1825)
 
----
-
-#### About Amtrak
-
-- [About Amtrak](/about-amtrak)
-- [A New Era of Rail](https://amtraknewera.com/)
-- [News & Media](https://media.amtrak.com/)
-- [Careers](https://careers.amtrak.com/)
-- [FOIA](/about-amtrak/foia)
-- [Office of Inspector General](https://amtrakoig.gov/)
-- [Amtrak Customer Service Commitments](/planning-booking/policies/amtrak-customer-service-commitments)
-
-#### Traveling with Us
-
-- [Baggage Policy & Services](/onboard/baggage-policy)
-- [Changing Your Reservation](/planning-booking/changes-refunds/changing-a-reservation)
-- [Unique Amtrak Experience](/experience/why-amtrak/the-unique-amtrak-experience-with-many-benefits)
-- [Trip Insurance, Reserved Parking](/deals-discounts/complete-your-trip-with-hotel-car-rental-insurance-more)
-- [Accessible Travel Services](/planning-booking/accessible-travel-services)
-- [Amtrak Vacations](/deals-discounts/rail-vacations-rail-tours/all-inclusive-train-vacation-packages)
-- [Gift Cards](/planning-booking/tickets-reservations/giftcards)
-
-#### Site Tools
-
-- [Service Alerts & Notices](/alert)
-- [Sign Up for Delay Alerts](/tickets/delay-alerts)
-- [Terms and Conditions](/terms-and-conditions)
-- [Web Notices & Terms of Use](/planning-booking/policies/web-notices-terms-of-use)
-- [Amtrak Store](https://www.store.amtrak.com/)
-- [Cookie Policy & Preferences](/planning-booking/policies/cookie-policy)
-- [Privacy Policy](/planning-booking/policies/privacy-policy)
-- [Contact Us](/contact-us)
+Hours of operation: 9:00 AM to 5:00 PM EST, Monday to Friday, except on federal holidays.
 
 ---
 
-[![Amtrak logo](/icons/amtrak-logo-white.svg)](/)
+#### Reports
 
-[Facebook](https://www.facebook.com/amtrak) | [Twitter](https://www.twitter.com/amtrak) | [Instagram](https://www.instagram.com/amtrak) | [LinkedIn](https://www.linkedin.com/company/amtrak) | [YouTube](https://www.youtube.com/amtrak) | [Pinterest](https://www.pinterest.com/amtraktravels/)
+- [FOIA (Freedom of Information Act)](/foia)
+- [Annual Reports](/reports/annual-reports-to-congress)
+- [Budget and Performance](/reports)
+- [Data](/data)
+- [EEO Resources](/eeo)
+- [Quality of Information](/reports/quality-of-information)
+- [Inspector General](/inspector-general)
 
-© 2026 National Railroad Passenger Corporation
+#### Quick Links
+
+- [Careers and Internships](/careers)
+- [Accessibility](/accessibility)
+- [Privacy Policy](/privacy)
+- [Terms of Use](/terms-of-use)
+- [USA.gov](https://www.usa.gov/)
+- [Employees](/selective-service-employees)
+- [Vulnerability Disclosure](/vulnerability-disclosure-policy)
+
+#### Get In Touch
+
+- [Email](mailto:information@sss.gov)
+- [LinkedIn](https://www.linkedin.com/company/selective-service-system/)
