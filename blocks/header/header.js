@@ -47,12 +47,18 @@ export default async function decorate(block) {
             <div class="nav-brand">
               <a href="/" aria-label="Selective Service System">
                 <img src="https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/sss-logo.svg" alt="SSS Logo">
-                <span>Selective Service System</span>
+                <span>SELECTIVE SERVICE SYSTEM</span>
               </a>
             </div>
-            <div class="nav-actions">
-              <a href="/register" class="nav-btn nav-btn-primary">Register</a>
-              <a href="/verify" class="nav-btn nav-btn-outline">Verify Registration</a>
+            <div class="nav-right">
+              <div class="nav-search">
+                <input type="search" placeholder="">
+                <button type="button">&#128269;</button>
+              </div>
+              <div class="nav-actions">
+                <a href="/register" class="nav-btn nav-btn-primary">Register</a>
+                <a href="/verify" class="nav-btn nav-btn-outline">Verify Registration</a>
+              </div>
             </div>
             <div class="nav-hamburger">
               <button type="button" aria-controls="nav" aria-label="Menu">
@@ -83,10 +89,6 @@ export default async function decorate(block) {
                   </ul>
                 </li>
               </ul>
-            </div>
-            <div class="nav-search">
-              <input type="search" placeholder="Search">
-              <button type="button">&#128269;</button>
             </div>
           </div>
         </nav>
