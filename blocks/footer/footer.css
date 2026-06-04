@@ -14,7 +14,7 @@
   gap: 32px;
 }
 
-@media (width >= 900px) {
+@media (min-width: 768px) {
   .footer .footer-wrapper {
     grid-template-columns: 1fr 1.5fr;
     gap: 0;
@@ -26,7 +26,7 @@
   padding-right: 0;
 }
 
-@media (width >= 900px) {
+@media (min-width: 768px) {
   .footer .footer-wrapper > div:first-child {
     padding-right: 30px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -58,6 +58,13 @@
   text-decoration: underline;
 }
 
+.footer .footer-wrapper > div:first-child img,
+.footer .footer-wrapper > div:first-child picture img {
+  width: 120px;
+  height: auto;
+  max-width: 120px;
+}
+
 /* Right: Nav columns - the 3 h4+ul pairs are inside a single div */
 .footer .footer-wrapper > div:nth-child(2) {
   padding-left: 0;
@@ -67,7 +74,7 @@
   align-content: start;
 }
 
-@media (width >= 900px) {
+@media (min-width: 768px) {
   .footer .footer-wrapper > div:nth-child(2) {
     padding-left: 30px;
   }
