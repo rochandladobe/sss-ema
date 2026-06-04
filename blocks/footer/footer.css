@@ -1,88 +1,93 @@
-/* footer.css - SSS.gov USWDS big footer */
+/* footer.css - SSS.gov USWDS big footer matching source */
 .footer {
-  background-color: #0e1d33;
+  background-color: #162e51;
   color: #fff;
-  padding: 48px 16px 24px;
+  padding: 0;
 }
 
-.footer .default-content-wrapper {
+.footer .footer-wrapper {
   max-width: 1280px;
   margin: 0 auto;
-}
-
-/* Two-column footer layout: logo/contact | nav columns */
-.footer > div {
+  padding: 40px 16px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 16px;
+  gap: 32px;
 }
 
 @media (width >= 900px) {
-  .footer > div {
+  .footer .footer-wrapper {
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 0;
   }
 }
 
-/* Logo and contact info (left side) */
-.footer h3 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  font-family: "Source Sans Pro", sans-serif;
-  margin: 12px 0 8px;
+/* First section: Logo + Contact */
+.footer .footer-wrapper > div:first-child {
+  padding-right: 30px;
+  border-right: none;
 }
 
-.footer > div > div:first-child p {
+@media (width >= 900px) {
+  .footer .footer-wrapper > div:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 30px;
+  }
+}
+
+.footer .footer-wrapper > div:first-child p {
   color: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   line-height: 1.7;
   margin: 0 0 4px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.footer > div > div:first-child a {
-  color: #73b3e7;
+.footer .footer-wrapper > div:first-child p strong {
+  font-size: 1.5625rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin-bottom: 8px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.footer .footer-wrapper > div:first-child a {
+  color: #dfe1e2;
   text-decoration: none;
 }
 
-.footer > div > div:first-child a:hover {
+.footer .footer-wrapper > div:first-child a:hover {
   text-decoration: underline;
-  color: #fff;
 }
 
-.footer > div > div:first-child img {
-  height: 40px;
-  width: auto;
-}
-
-/* 3-column navigation (right side) */
-.footer .columns > div {
+/* Second section: 3-column nav */
+.footer .footer-wrapper > div:nth-child(2) {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  padding-left: 0;
 }
 
 @media (width >= 600px) {
-  .footer .columns > div {
+  .footer .footer-wrapper > div:nth-child(2) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 16px;
+    padding-left: 30px;
   }
 }
 
 .footer h4 {
   color: #fff;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   font-family: "Source Sans Pro", sans-serif;
   margin: 0 0 12px;
+  padding-bottom: 8px;
 }
 
 .footer ul {
   list-style: none;
-  margin: 0;
+  margin: 0 0 24px;
   padding: 0;
 }
 
@@ -102,7 +107,17 @@
   text-decoration: underline;
 }
 
-/* General footer link styling */
-.footer a:any-link {
-  color: #73b3e7;
+/* Third section: Copyright */
+.footer .footer-wrapper > div:last-child {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.footer .footer-wrapper > div:last-child p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
 }
