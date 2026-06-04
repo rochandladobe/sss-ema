@@ -43,46 +43,51 @@ export default async function decorate(block) {
     wrapper.innerHTML = `
       <div class="nav-wrapper">
         <nav class="nav" aria-expanded="false">
-          <div class="nav-brand">
-            <a href="/" aria-label="Selective Service System">
-              <span>Selective Service System</span>
-            </a>
+          <div class="nav-top">
+            <div class="nav-brand">
+              <a href="/" aria-label="Selective Service System">
+                <img src="https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/sss-logo.svg" alt="SSS Logo">
+                <span>Selective Service System</span>
+              </a>
+            </div>
+            <div class="nav-actions">
+              <a href="/register" class="nav-btn nav-btn-primary">Register</a>
+              <a href="/verify" class="nav-btn nav-btn-outline">Verify Registration</a>
+            </div>
+            <div class="nav-hamburger">
+              <button type="button" aria-controls="nav" aria-label="Menu">
+                <span class="nav-hamburger-icon"></span>
+              </button>
+            </div>
           </div>
-          <div class="nav-sections">
-            <ul>
-              <li class="nav-drop"><a href="/register">Registration</a>
-                <ul>
-                  <li><a href="/register">Register Now</a></li>
-                  <li><a href="/register/who-needs-to-register">Who Needs to Register</a></li>
-                  <li><a href="/register/benefits-and-penalties">Benefits &amp; Penalties</a></li>
-                  <li><a href="/register/men-26-and-older">Men 26 and Older</a></li>
-                  <li><a href="/verify">Verify Registration</a></li>
-                </ul>
-              </li>
-              <li><a href="/faq">Frequently Asked Questions</a></li>
-              <li><a href="/news-and-media">News &amp; Media</a></li>
-              <li><a href="/reports">Reports &amp; Publications</a></li>
-              <li class="nav-drop"><a href="/about">About</a>
-                <ul>
-                  <li><a href="/about">About Selective Service</a></li>
-                  <li><a href="/history-and-records">History &amp; Records</a></li>
-                  <li><a href="/careers">Careers</a></li>
-                  <li><a href="/contact">Contact Us</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="nav-actions">
-            <a href="/register" class="nav-btn nav-btn-primary">Register</a>
-            <a href="/verify" class="nav-btn nav-btn-outline">Verify</a>
-          </div>
-          <div class="nav-search">
-            <input type="search" placeholder="Search...">
-          </div>
-          <div class="nav-hamburger">
-            <button type="button" aria-controls="nav" aria-label="Open navigation">
-              <span class="nav-hamburger-icon"></span>
-            </button>
+          <div class="nav-bottom">
+            <div class="nav-sections">
+              <ul>
+                <li class="nav-drop"><a href="/register">Registration</a>
+                  <ul>
+                    <li><a href="/register">Register Now</a></li>
+                    <li><a href="/register/who-needs-to-register">Who Needs to Register</a></li>
+                    <li><a href="/verify">Verify Status</a></li>
+                    <li><a href="/verify/update-info">Update Your Information</a></li>
+                    <li><a href="/register/benefits-and-penalties">Benefits &amp; Penalties</a></li>
+                  </ul>
+                </li>
+                <li><a href="/faq">Frequently Asked Questions</a></li>
+                <li><a href="/news-and-media">News &amp; Media</a></li>
+                <li><a href="/reports">Reports &amp; Publications</a></li>
+                <li class="nav-drop"><a href="/about">About</a>
+                  <ul>
+                    <li><a href="/about">About Selective Service</a></li>
+                    <li><a href="/history-and-records">Records</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-search">
+              <input type="search" placeholder="Search">
+              <button type="button">&#128269;</button>
+            </div>
           </div>
         </nav>
       </div>`;
