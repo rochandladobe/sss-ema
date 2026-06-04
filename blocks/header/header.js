@@ -1,3 +1,14 @@
+/*
+ * Copyright 2025 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */
 function getMetadata(name) {
   const attr = name && name.includes(':') ? 'property' : 'name';
   const meta = document.head.querySelector(`meta[${attr}="${name}"]`);
@@ -39,12 +50,31 @@ export default async function decorate(block) {
           </div>
           <div class="nav-sections">
             <ul>
-              <li><a href="/register">Registration</a></li>
+              <li class="nav-drop"><a href="/register">Registration</a>
+                <ul>
+                  <li><a href="/register">Register Now</a></li>
+                  <li><a href="/register/who-needs-to-register">Who Needs to Register</a></li>
+                  <li><a href="/register/benefits-and-penalties">Benefits &amp; Penalties</a></li>
+                  <li><a href="/register/men-26-and-older">Men 26 and Older</a></li>
+                  <li><a href="/verify">Verify Registration</a></li>
+                </ul>
+              </li>
               <li><a href="/faq">Frequently Asked Questions</a></li>
               <li><a href="/news-and-media">News &amp; Media</a></li>
               <li><a href="/reports">Reports &amp; Publications</a></li>
-              <li><a href="/about">About</a></li>
+              <li class="nav-drop"><a href="/about">About</a>
+                <ul>
+                  <li><a href="/about">About Selective Service</a></li>
+                  <li><a href="/history-and-records">History &amp; Records</a></li>
+                  <li><a href="/careers">Careers</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                </ul>
+              </li>
             </ul>
+          </div>
+          <div class="nav-actions">
+            <a href="/register" class="nav-btn nav-btn-primary">Register</a>
+            <a href="/verify" class="nav-btn nav-btn-outline">Verify</a>
           </div>
           <div class="nav-search">
             <input type="search" placeholder="Search...">
