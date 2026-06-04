@@ -10,13 +10,26 @@ function toggleMenu(nav, navSections, forceExpand) {
   navSections?.setAttribute('aria-expanded', expanded ? 'false' : 'true');
 }
 
+function buildUSABanner() {
+  const banner = document.createElement('div');
+  banner.classList.add('usa-banner');
+  banner.innerHTML = `
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11'%3E%3Crect width='16' height='11' fill='%23002868'/%3E%3Crect width='16' height='1' y='2' fill='white'/%3E%3Crect width='16' height='1' y='4' fill='%23BF0A30'/%3E%3Crect width='16' height='1' y='6' fill='white'/%3E%3Crect width='16' height='1' y='8' fill='%23BF0A30'/%3E%3Crect width='16' height='1' y='10' fill='white'/%3E%3C/svg%3E" alt="U.S. flag">
+    <span>An official website of the United States government</span>`;
+  return banner;
+}
+
 export default async function decorate(block) {
+  const usaBanner = buildUSABanner();
+  block.prepend(usaBanner);
+
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const resp = await fetch(`${navPath}.plain.html`);
 
   if (!resp.ok) {
-    block.innerHTML = `
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = `
       <div class="nav-wrapper">
         <nav class="nav" aria-expanded="false">
           <div class="nav-brand">
@@ -26,15 +39,15 @@ export default async function decorate(block) {
           </div>
           <div class="nav-sections">
             <ul>
-              <li><a href="/register">Register</a></li>
-              <li><a href="/verify">Verify</a></li>
-              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/register">Registration</a></li>
+              <li><a href="/faq">Frequently Asked Questions</a></li>
+              <li><a href="/news-and-media">News &amp; Media</a></li>
+              <li><a href="/reports">Reports &amp; Publications</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
-          <div class="nav-tools">
-            <a href="/register" class="nav-tool">Register Now</a>
+          <div class="nav-search">
+            <input type="search" placeholder="Search...">
           </div>
           <div class="nav-hamburger">
             <button type="button" aria-controls="nav" aria-label="Open navigation">
@@ -43,6 +56,7 @@ export default async function decorate(block) {
           </div>
         </nav>
       </div>`;
+    block.append(wrapper.firstElementChild);
     const hamburger = block.querySelector('.nav-hamburger');
     const nav = block.querySelector('.nav');
     const navSections = block.querySelector('.nav-sections');
@@ -63,21 +77,26 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
-    navSections.querySelectorAll('.button').forEach((button) => {
-      button.className = '';
-      const buttonContainer = button.closest('.button-container');
-      if (buttonContainer) buttonContainer.className = '';
+    navSections.querySelectorAll('.button').forEach((btn) => {
+      btn.classList.remove('button');
+      const buttonContainer = btn.closest('.button-container');
+      if (buttonContainer) buttonContainer.classList.remove('button-container');
     });
   }
 
   const navBrand = nav.querySelector('.nav-brand');
   if (navBrand) {
-    navBrand.querySelectorAll('.button').forEach((button) => {
-      button.className = '';
-      const buttonContainer = button.closest('.button-container');
-      if (buttonContainer) buttonContainer.className = '';
+    navBrand.querySelectorAll('.button').forEach((btn) => {
+      btn.classList.remove('button');
+      const buttonContainer = btn.closest('.button-container');
+      if (buttonContainer) buttonContainer.classList.remove('button-container');
     });
   }
+
+  const searchDiv = document.createElement('div');
+  searchDiv.classList.add('nav-search');
+  searchDiv.innerHTML = '<input type="search" placeholder="Search...">';
+  nav.append(searchDiv);
 
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
