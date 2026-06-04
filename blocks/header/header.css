@@ -1,8 +1,8 @@
-/* header.css */
+/* header.css - SSS.gov style */
 header .header { padding: 0; }
 
 .nav-wrapper {
-  background-color: #162e51;
+  background-color: #0c1b31;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -21,11 +21,17 @@ nav.nav, .nav {
 .nav-brand a {
   display: flex;
   align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Merriweather", serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .nav-brand img {
   height: 40px;
   width: auto;
+  margin-right: 12px;
 }
 
 .nav-sections ul {
@@ -33,24 +39,22 @@ nav.nav, .nav {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 8px;
+  gap: 4px;
 }
 
 .nav-sections ul li a {
   color: #fff;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 8px 16px;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
   border-radius: 4px;
   transition: background 0.2s;
 }
 
 .nav-sections ul li a:hover {
-  background-color: rgba(255,255,255,0.15);
-  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: underline;
 }
 
 .nav-tools {
@@ -59,10 +63,18 @@ nav.nav, .nav {
   gap: 16px;
 }
 
-.nav-tool {
+.nav-tools a {
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
+  background-color: #005ea2;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav-tools a:hover {
+  background-color: #1a4480;
 }
 
 .nav-hamburger {
@@ -102,11 +114,11 @@ nav.nav, .nav {
   nav[aria-expanded='true'] .nav-sections {
     display: block;
     position: fixed;
-    top: 72px;
+    top: 64px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #162e51;
+    background: #0c1b31;
     overflow-y: auto;
     padding: 24px;
   }
