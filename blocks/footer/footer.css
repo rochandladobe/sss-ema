@@ -1,4 +1,4 @@
-/* footer.css - SSS.gov USWDS big footer matching source */
+/* footer.css - SSS.gov USWDS big footer */
 .footer {
   background-color: #162e51;
   color: #fff;
@@ -8,7 +8,7 @@
 .footer .footer-wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding: 40px 16px 24px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
@@ -16,21 +16,20 @@
 
 @media (width >= 900px) {
   .footer .footer-wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 0;
   }
 }
 
-/* First section: Logo + Contact */
+/* Left: Contact info */
 .footer .footer-wrapper > div:first-child {
-  padding-right: 30px;
-  border-right: none;
+  padding-right: 0;
 }
 
 @media (width >= 900px) {
   .footer .footer-wrapper > div:first-child {
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-right: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -47,8 +46,7 @@
   font-weight: 700;
   color: #fff;
   display: block;
-  margin-bottom: 8px;
-  font-family: "Source Sans Pro", sans-serif;
+  margin-bottom: 12px;
 }
 
 .footer .footer-wrapper > div:first-child a {
@@ -60,34 +58,46 @@
   text-decoration: underline;
 }
 
-/* Second section: 3-column nav */
+/* Right: Nav columns - the 3 h4+ul pairs are inside a single div */
 .footer .footer-wrapper > div:nth-child(2) {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
   padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-content: start;
 }
 
-@media (width >= 600px) {
+@media (width >= 900px) {
   .footer .footer-wrapper > div:nth-child(2) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
     padding-left: 30px;
   }
 }
 
-.footer h4 {
+/* Each h4 starts a new implicit column via CSS grid */
+.footer .footer-wrapper > div:nth-child(2) h4 {
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
   font-family: "Source Sans Pro", sans-serif;
-  margin: 0 0 12px;
-  padding-bottom: 8px;
+  margin: 0 0 10px;
+  grid-column: auto;
 }
+
+/* Reports section (1st h4 + 1st ul) */
+.footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+.footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(1) { grid-column: 1; grid-row: 2; }
+
+/* Quick Links section (2nd h4 + 2nd ul) */
+.footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+.footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(2) { grid-column: 2; grid-row: 2; }
+
+/* Get In Touch section (3rd h4 + 3rd ul) */
+.footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(3) { grid-column: 3; grid-row: 1; }
+.footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(3) { grid-column: 3; grid-row: 2; }
 
 .footer ul {
   list-style: none;
-  margin: 0 0 24px;
+  margin: 0;
   padding: 0;
 }
 
@@ -107,17 +117,30 @@
   text-decoration: underline;
 }
 
-/* Third section: Copyright */
-.footer .footer-wrapper > div:last-child {
+/* Copyright */
+.footer .footer-wrapper > p {
   grid-column: 1 / -1;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 16px;
-  margin-top: 16px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.footer .footer-wrapper > div:last-child p {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+/* Mobile: stack columns */
+@media (max-width: 599px) {
+  .footer .footer-wrapper > div:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(1),
+  .footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(1),
+  .footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(2),
+  .footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(2),
+  .footer .footer-wrapper > div:nth-child(2) h4:nth-of-type(3),
+  .footer .footer-wrapper > div:nth-child(2) ul:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }
