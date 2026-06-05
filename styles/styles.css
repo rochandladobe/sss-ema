@@ -271,7 +271,7 @@ main > div.section:first-of-type:not(.hero-gov-container) {
     padding-right: calc(48px + max(0px, (100vw - 100% - 96px) / 2));
     /* Vertical padding for the band height */
     padding-top: 35px;
-    padding-bottom: 38px;
+    padding-bottom: 60px;
     /* Thin underline rule beneath the title */
     border-bottom: 2px solid rgba(255, 255, 255, 0.35);
     /* Reset vertical margins */
@@ -293,7 +293,7 @@ main > div.section:first-of-type:not(.hero-gov-container) {
     padding-left: calc(32px + max(0px, (100vw - 100% - 64px) / 2));
     padding-right: calc(32px + max(0px, (100vw - 100% - 64px) / 2));
     padding-top: 28px;
-    padding-bottom: 32px;
+    padding-bottom: 50px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.35);
     margin-top: 0;
     margin-bottom: 0;
@@ -313,7 +313,7 @@ main > div.section:first-of-type:not(.hero-gov-container) {
     padding-left: calc(24px + max(0px, (100vw - 100% - 48px) / 2));
     padding-right: calc(24px + max(0px, (100vw - 100% - 48px) / 2));
     padding-top: 24px;
-    padding-bottom: 28px;
+    padding-bottom: 44px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.35);
     margin-top: 0;
     margin-bottom: 0;
