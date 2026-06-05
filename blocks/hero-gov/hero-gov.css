@@ -1,3 +1,4 @@
+/* hero-gov.css - SSS.gov homepage hero */
 .hero-gov-container .hero-gov-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,8 +6,7 @@
 
 .hero-gov {
   position: relative;
-  padding: 80px 24px;
-  min-height: 450px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   background-color: #162e51;
@@ -14,67 +14,101 @@
 }
 
 .hero-gov > div {
+  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
   position: relative;
   z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
+}
+
+/* Text content - left side */
+.hero-gov > div > div:last-child {
+  flex: 0 0 55%;
+  max-width: 600px;
+}
+
+/* Background image - right side */
+.hero-gov > div > div:first-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.hero-gov > div > div:first-child picture,
+.hero-gov > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-gov h1 {
   color: #fff;
   font-family: "Merriweather", serif;
-  font-size: 39px;
+  font-size: 2.44rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 24px;
 }
 
 .hero-gov p {
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 12px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-.hero-gov a.button:any-link {
-  background-color: #005ea2;
-  color: #fff;
-  padding: 14px 24px;
-  border-radius: 4px;
+.hero-gov a {
+  display: inline-block;
   font-size: 16px;
   font-weight: 700;
-  margin: 8px;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 12px;
+  margin-top: 12px;
 }
 
-.hero-gov a.button:hover {
-  background-color: #1a4480;
+.hero-gov a:first-of-type,
+.hero-gov p:last-child a:first-child {
+  background-color: #d83933;
+  color: #fff;
+  border: 2px solid #d83933;
 }
 
-.hero-gov picture {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-  opacity: 0.3;
+.hero-gov a:first-of-type:hover {
+  background-color: #b51d09;
 }
 
-.hero-gov img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.hero-gov p:last-child a:last-child,
+.hero-gov a:nth-of-type(2) {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
 }
 
-@media (width >= 900px) {
-  .hero-gov {
-    min-height: 500px;
-    padding: 100px 48px;
+.hero-gov p:last-child a:last-child:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 899px) {
+  .hero-gov > div > div:first-child {
+    display: none;
+  }
+
+  .hero-gov > div > div:last-child {
+    flex: 1;
+    max-width: 100%;
   }
 
   .hero-gov h1 {
-    font-size: 48px;
-  }
-
-  .hero-gov p {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
