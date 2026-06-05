@@ -200,6 +200,14 @@ header .header {
   gap: 12px;
 }
 
+/* Force white button text (override boilerplate .button blue link-color). */
+header .nav-tools a.nav-tool-btn,
+header .nav-tools a.nav-tool-btn:hover,
+header .nav-tools a.nav-tool-btn:focus,
+header .nav-tools a.nav-tool-btn:visited {
+  color: #fff;
+}
+
 .nav-tool-btn {
   display: inline-block;
   font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
