@@ -98,8 +98,18 @@ function decorateSections(navSections) {
   if (!topList) return;
 
   topList.querySelectorAll(':scope > li').forEach((li) => {
-    const strong = li.querySelector(':scope > strong');
+    // DA may wrap the label in a <p> (e.g. <li><p><strong>Label</strong></p><ul>...</ul></li>),
+    // so look for <strong> as a direct child OR inside a direct-child <p>.
+    const strong = li.querySelector(':scope > strong, :scope > p > strong');
     const submenu = li.querySelector(':scope > ul');
+    // Plain links may also be wrapped in a <p>; unwrap them for consistent layout.
+    const plainP = li.querySelector(':scope > p > a');
+    if (plainP && !submenu) {
+      const wrapperP = plainP.closest('p');
+      if (wrapperP && wrapperP.parentElement === li) {
+        wrapperP.replaceWith(plainP);
+      }
+    }
 
     if (strong && submenu) {
       // Dropdown item.
@@ -124,7 +134,13 @@ function decorateSections(navSections) {
 
       submenu.classList.add('nav-drop-menu');
 
-      strong.replaceWith(toggle);
+      // If <strong> is wrapped in a <p>, replace the whole <p>; otherwise replace <strong>.
+      const strongWrapper = strong.closest('p');
+      if (strongWrapper && strongWrapper.parentElement === li) {
+        strongWrapper.replaceWith(toggle);
+      } else {
+        strong.replaceWith(toggle);
+      }
 
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
