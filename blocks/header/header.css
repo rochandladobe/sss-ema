@@ -5,6 +5,14 @@
  * - nav row: white nav links with dropdowns
  */
 
+/* Override boilerplate fixed header height (styles.css sets header{height:80px}). */
+body header.header-wrapper,
+body header {
+  height: auto;
+  min-height: 0;
+  background-color: #0c1b31;
+}
+
 /* Remove default header chrome / white background. */
 header .header {
   padding: 0;
