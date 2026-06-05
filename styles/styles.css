@@ -168,7 +168,7 @@ main .section {
 main .section:not(.dark):not(.hero-gov-container) {
   background-color: var(--color-white);
   color: var(--text-color);
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* Hero section: full-bleed navy (break out of the 1200px max-width cap). */
