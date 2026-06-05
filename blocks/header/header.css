@@ -15,15 +15,15 @@ header .header {
    US Government banner strip
    --------------------------------------------------------------------------- */
 .usa-banner {
-  background-color: #f0f0f0;
-  color: #1b1b1b;
+  background-color: #0c1b31;
+  color: #fff;
   font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.4;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 24px;
+  padding: 6px 24px;
 }
 
 .usa-banner img {
@@ -36,7 +36,7 @@ header .header {
    Nav wrapper - full-width dark navy background
    --------------------------------------------------------------------------- */
 .nav-wrapper {
-  background-color: #0e1d33;
+  background-color: #0c1b31;
 }
 
 .nav {
@@ -54,7 +54,9 @@ header .header {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 16px 24px;
+  padding: 32px 24px;
+  min-height: 200px;
+  box-sizing: border-box;
 }
 
 /* Brand: seal + wordmark */
@@ -74,27 +76,50 @@ header .header {
 .nav-brand-link {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 0;
   color: #fff;
   text-decoration: none;
 }
 
 .nav-brand-seal {
-  width: 56px;
-  height: 56px;
+  width: 120px;
+  height: 120px;
   flex: 0 0 auto;
   display: block;
 }
 
 .nav-brand-text {
+  position: relative;
+  display: block;
   font-family: "Merriweather", Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 1px;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 1.56px;
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
+  padding-left: 20px;
+}
+
+/* Two thin fading horizontal lines above and below the wordmark */
+.nav-brand-text::before,
+.nav-brand-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.nav-brand-text::before {
+  top: -14px;
+}
+
+.nav-brand-text::after {
+  bottom: -14px;
+  top: auto;
 }
 
 /* ---------------------------------------------------------------------------
@@ -102,8 +127,9 @@ header .header {
    --------------------------------------------------------------------------- */
 .nav-right {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
   flex: 0 0 auto;
 }
 
@@ -111,6 +137,7 @@ header .header {
 .nav-search {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .nav-search-form {
@@ -121,34 +148,36 @@ header .header {
 
 .nav-search-icon {
   position: absolute;
-  left: 12px;
+  right: 4px;
   top: 50%;
   transform: translateY(-50%);
-  color: #71767a;
+  color: #fff;
   display: flex;
   pointer-events: none;
 }
 
 .nav-search input {
-  width: 200px;
-  background: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  color: #1b1b1b;
+  width: 275px;
+  height: 32px;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  color: #fff;
   font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
   font-size: 15px;
-  padding: 9px 12px 9px 38px;
+  padding: 4px 30px 4px 2px;
   outline: none;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: border-color 0.15s ease;
 }
 
 .nav-search input::placeholder {
-  color: #71767a;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-search input:focus {
-  border-color: #2491ff;
-  box-shadow: 0 0 0 2px rgba(36, 145, 255, 0.5);
+  border-bottom-color: #fff;
 }
 
 /* ---------------------------------------------------------------------------
@@ -165,40 +194,41 @@ header .header {
 
 .nav-tool-btn {
   display: inline-block;
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 15px;
+  font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.1;
-  padding: 10px 24px;
-  border-radius: 4px;
+  padding: 18px 36px;
+  border-radius: 9999px;
+  text-transform: none;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, background-image 0.15s ease;
 }
 
 .nav-tool-primary {
-  background-color: #d83933;
+  background-image: linear-gradient(#94191f 0%, #651014 100%);
+  background-color: #94191f;
   color: #fff;
-  border: 2px solid #d83933;
+  border: 2px solid transparent;
 }
 
 .nav-tool-primary:hover,
 .nav-tool-primary:focus {
-  background-color: #b50909;
-  border-color: #b50909;
+  background-image: linear-gradient(#7d141a 0%, #4f0c0f 100%);
   color: #fff;
 }
 
 .nav-tool-outline {
   background-color: transparent;
   color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: 2px solid #fff;
 }
 
 .nav-tool-outline:hover,
 .nav-tool-outline:focus {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: #fff;
   color: #fff;
 }
@@ -208,7 +238,21 @@ header .header {
    --------------------------------------------------------------------------- */
 .nav-bottom {
   padding: 0 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+/* Thin fading divider line directly below the nav row */
+.nav-sections::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 
 .nav-sections > ul {
@@ -233,11 +277,11 @@ header .header {
   align-items: center;
   gap: 6px;
   color: rgba(255, 255, 255, 0.92);
-  font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
-  font-size: 15px;
+  font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.2;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
   background: none;
   border: none;
@@ -257,7 +301,7 @@ header .header {
 .nav-sections > ul > li.open > .nav-drop-toggle {
   color: #fff;
   background: rgba(255, 255, 255, 0.06);
-  border-bottom-color: #d83933;
+  border-bottom-color: #94191f;
 }
 
 /* Chevron */
@@ -284,7 +328,7 @@ header .header {
   left: 0;
   min-width: 220px;
   background: #fff;
-  border-top: 3px solid #d83933;
+  border-top: 3px solid #94191f;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   z-index: 200;
   display: none;
@@ -321,7 +365,7 @@ header .header {
 .nav-drop-menu li a:hover,
 .nav-drop-menu li a:focus {
   background: #f0f0f0;
-  color: #0e1d33;
+  color: #0c1b31;
 }
 
 /* ---------------------------------------------------------------------------
@@ -386,17 +430,28 @@ nav[aria-expanded='true'] .nav-hamburger-icon::after {
   .nav-top {
     padding: 14px 16px;
     gap: 12px;
+    min-height: 0;
   }
 
   .nav-brand-seal {
-    width: 44px;
-    height: 44px;
+    width: 64px;
+    height: 64px;
   }
 
   .nav-brand-text {
     font-size: 16px;
+    line-height: 1.2;
     letter-spacing: 0.5px;
     white-space: normal;
+    padding-left: 12px;
+  }
+
+  .nav-brand-text::before {
+    top: -8px;
+  }
+
+  .nav-brand-text::after {
+    bottom: -8px;
   }
 
   .nav-hamburger {
