@@ -221,63 +221,101 @@ main .section.dark a:any-link {
 
 /* =============================================================
    INNER-PAGE COMPACT HERO BAND
-   Applies to all inner pages whose first section is NOT a hero-gov
-   block (i.e. plain default-content sections with an H1).
-   Matches the sss.gov .hero--internal band: navy bg, white H1,
-   thin underline rule, left-aligned, full-bleed.
+   Targets the first H1 on inner pages (first section that is NOT
+   a hero-gov block). Creates a full-bleed navy band matching the
+   sss.gov .hero--internal style: navy bg, white Merriweather title,
+   thin underline rule, left-aligned, full-bleed width.
+
+   Break-out formula (correct for elements inside a max-width centered section
+   plus section padding):
+     100% = .default-content-wrapper width = section_width - 2*section_padding
+           = min(1200px, 100vw) - 96px
+
+   To start the h1 at viewport left edge (x=0):
+     margin-left = -(wrapper_offset_from_viewport)
+                 = -(section_centering + section_padding_left)
+                 = -(max(0, (100vw - 1200px)/2) + 48px)
+
+   Since 1200px = 100% + 96px (wrapper + section padding both sides):
+     margin-left = calc(-48px - max(0px, (100vw - 100% - 96px) / 2))
+
+   For padding-left, mirror the calculation so text aligns with normal content:
+     padding-left = section_centering + section_padding_left
+                  = 48px + max(0px, (100vw - 100% - 96px) / 2)
    ============================================================= */
 
-/* Remove top padding from first section so the hero band butts up
-   against the nav bar with no white gap above. */
+/* Prevent horizontal scrollbar from the 100vw technique */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Remove top padding from first section so the hero band butts flush against the nav */
 main > div.section:first-of-type:not(.hero-gov-container) {
   padding-top: 0;
 }
 
-/* The H1 inside the first section gets the full-bleed navy hero treatment.
-   Uses the viewport-width break-out technique:
-   - width: 100vw  makes it span the full viewport
-   - margin-left: calc(-1 * (section-padding-left + section-centering-offset))
-     = calc(-1 * (48px + (100vw - 100%) / 2))
-     where 100% = section width (≤1200px), 100vw = viewport width
-   - padding replicates the original readable indent on the content */
-main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
-  background-color: #162e51;
-  color: #fff;
-  font-family: "Merriweather", serif;
-  font-weight: 300;
-  /* Break out of section padding + centering to span full viewport */
-  width: 100vw;
-  margin-left: calc(-1 * (48px + (100vw - 100%) / 2));
-  /* Padding: top/bottom for the band height, left/right for readable indent.
-     Left padding mirrors: section centering offset + section padding + desired text indent */
-  padding: 35px calc(48px + (100vw - 100%) / 2) 38px;
-  /* Underline rule via border-bottom */
-  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
-  /* Reset margins */
-  margin-top: 0;
-  margin-bottom: 0;
-  /* Prevent overflow from creating horizontal scrollbar */
-  overflow: hidden;
-  position: relative;
-}
-
-/* Responsive: adjust padding for smaller viewports */
-@media (width < 900px) {
+/* Inner-page H1 hero band (at ≥900px where max-width and centering apply) */
+@media (width >= 900px) {
   main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
-    margin-left: calc(-1 * (32px + (100vw - 100%) / 2));
-    padding: 28px calc(32px + (100vw - 100%) / 2) 32px;
+    /* Full-bleed navy background */
+    background-color: #162e51;
+    color: #fff;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    /* Span full viewport width */
+    width: 100vw;
+    /* Break out: escape wrapper's offset from viewport left */
+    margin-left: calc(-48px - max(0px, (100vw - 100% - 96px) / 2));
+    /* Restore readable indent: text starts at same x as page content */
+    padding-left: calc(48px + max(0px, (100vw - 100% - 96px) / 2));
+    padding-right: calc(48px + max(0px, (100vw - 100% - 96px) / 2));
+    /* Vertical padding for the band height */
+    padding-top: 35px;
+    padding-bottom: 38px;
+    /* Thin underline rule beneath the title */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    /* Reset vertical margins */
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
+/* Mid viewport (600–899px): section not centered, only has side padding of 32px */
+@media (width >= 600px) and (width < 900px) {
+  main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
+    background-color: #162e51;
+    color: #fff;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    width: 100vw;
+    /* section padding at this breakpoint is 32px; wrapper 100% = 100vw - 64px */
+    margin-left: calc(-32px - max(0px, (100vw - 100% - 64px) / 2));
+    padding-left: calc(32px + max(0px, (100vw - 100% - 64px) / 2));
+    padding-right: calc(32px + max(0px, (100vw - 100% - 64px) / 2));
+    padding-top: 28px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Small viewport (<600px): section padding is 24px */
 @media (width < 600px) {
   main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
-    margin-left: calc(-1 * (24px + (100vw - 100%) / 2));
-    padding: 24px calc(24px + (100vw - 100%) / 2) 28px;
+    background-color: #162e51;
+    color: #fff;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
     font-size: 1.6rem;
+    width: 100vw;
+    margin-left: calc(-24px - max(0px, (100vw - 100% - 48px) / 2));
+    padding-left: calc(24px + max(0px, (100vw - 100% - 48px) / 2));
+    padding-right: calc(24px + max(0px, (100vw - 100% - 48px) / 2));
+    padding-top: 24px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+    margin-top: 0;
+    margin-bottom: 0;
   }
-}
-
-/* Prevent html/body from getting a horizontal scrollbar due to 100vw technique */
-html, body {
-  overflow-x: hidden;
 }
