@@ -1,14 +1,14 @@
 /* footer.css - SSS.gov USWDS big footer */
 .footer {
-  background-color: #162e51;
+  background-color: #0c1b31;
   color: #fff;
   padding: 0;
 }
 
 .footer .footer-wrapper {
-  max-width: 1280px;
+  max-width: 1296px;
   margin: 0 auto;
-  padding: 40px 16px 24px;
+  padding: 40px 48px 24px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
@@ -39,6 +39,19 @@
   line-height: 1.7;
   margin: 0 0 4px;
   font-family: "Source Sans Pro", sans-serif;
+}
+
+/* SSS seal logo rendered via CSS (avoids content-pipeline image processing) */
+.footer .footer-wrapper > div:first-child::before {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin-bottom: 16px;
+  background-image: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/sss-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
 }
 
 .footer .footer-wrapper > div:first-child p strong {
