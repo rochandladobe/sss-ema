@@ -80,8 +80,8 @@ function decorateBrand(navBrand) {
     img.src = SEAL_LOGO_URL;
     img.alt = 'Selective Service System seal';
     img.classList.add('nav-brand-seal');
-    img.width = 56;
-    img.height = 56;
+    img.width = 120;
+    img.height = 120;
     img.loading = 'eager';
 
     link.textContent = '';
