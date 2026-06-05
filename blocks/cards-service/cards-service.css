@@ -15,8 +15,11 @@
 }
 
 .cards-service > ul > li {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 16px;
+  align-items: center;
   padding: 24px 32px 24px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -36,18 +39,26 @@
   border-top: none;
 }
 
-/* Icon + title row */
+/* Icon: left column, row 1 (aligned with title) */
 .cards-service > ul > li .cards-service-card-image {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 0;
 }
 
 .cards-service > ul > li .cards-service-card-image img {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  margin-right: 12px;
+}
+
+/* Body: right column, spans both rows so title sits next to icon and text below */
+.cards-service > ul > li .cards-service-card-body {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
 /* Title next to icon */
@@ -56,7 +67,7 @@
   font-weight: 700;
   font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
   color: #1b1b1b;
-  margin: 8px 0 12px;
+  margin: 0 0 8px;
 }
 
 .cards-service > ul > li .cards-service-card-body p {
