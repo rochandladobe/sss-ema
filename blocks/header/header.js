@@ -27,9 +27,19 @@ function isMobile() {
 function buildUSABanner() {
   const banner = document.createElement('div');
   banner.classList.add('usa-banner');
+  // Inline American-flag SVG (16x11) — avoids external image and content-pipeline issues.
+  const flagSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11' viewBox='0 0 16 11'%3E%3Crect width='16' height='11' fill='%23b22234'/%3E%3Cg fill='%23fff'%3E%3Crect y='0.85' width='16' height='0.85'/%3E%3Crect y='2.54' width='16' height='0.85'/%3E%3Crect y='4.23' width='16' height='0.85'/%3E%3Crect y='5.92' width='16' height='0.85'/%3E%3Crect y='7.62' width='16' height='0.85'/%3E%3Crect y='9.31' width='16' height='0.85'/%3E%3C/g%3E%3Crect width='6.4' height='5.92' fill='%233c3b6e'/%3E%3C/svg%3E";
   banner.innerHTML = `
-    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11'%3E%3Crect width='16' height='11' fill='%23002868'/%3E%3Crect width='16' height='1' y='2' fill='white'/%3E%3Crect width='16' height='1' y='4' fill='%23BF0A30'/%3E%3Crect width='16' height='1' y='6' fill='white'/%3E%3Crect width='16' height='1' y='8' fill='%23BF0A30'/%3E%3Crect width='16' height='1' y='10' fill='white'/%3E%3C/svg%3E" alt="U.S. flag">
-    <span>An official website of the United States government</span>`;
+    <div class="usa-banner-inner">
+      <div class="usa-banner-left">
+        <img class="usa-banner-flag" src="${flagSvg}" alt="U.S. flag" width="16" height="11">
+        <span class="usa-banner-text">An official website of the United States government</span>
+      </div>
+      <button type="button" class="usa-banner-action" aria-expanded="false">
+        <span>Here's how you know</span>
+        <span class="usa-banner-arrow" aria-hidden="true">&#9662;</span>
+      </button>
+    </div>`;
   return banner;
 }
 
