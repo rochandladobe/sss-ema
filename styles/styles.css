@@ -191,11 +191,11 @@ main .section.dark {
 }
 
 /* Keep dark-section content centered at the standard content width. */
-main .section.dark > .default-content-wrapper,
-main .section.dark > div[class$="-wrapper"] {
+main .section.dark > div {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: 48px;
+  width: 100%;
 }
 
 /* section metadata */
