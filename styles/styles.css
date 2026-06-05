@@ -50,7 +50,7 @@ body {
   font-family: var(--body-font-family);
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background-color: var(--page-background, #0e1d33);
   display: none;
 }
 
@@ -161,6 +161,41 @@ main .section {
     max-width: 1200px;
     margin: auto;
   }
+}
+
+/* Full-width navy page background with a centered white "card" for the
+   light content section (matches sss.gov hero__content-container). */
+main .section:not(.dark):not(.hero-gov-container) {
+  background-color: var(--color-white);
+  color: var(--text-color);
+  border-radius: 8px;
+}
+
+/* Hero section: full-bleed navy (break out of the 1200px max-width cap). */
+main .section.hero-gov-container {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+/* Additional Groups (dark) section: full-bleed navy too. */
+main .section.dark {
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Keep dark-section content centered at the standard content width. */
+main .section.dark > .default-content-wrapper,
+main .section.dark > div[class$="-wrapper"] {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 48px;
 }
 
 /* section metadata */
