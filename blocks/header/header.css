@@ -28,16 +28,59 @@ header .header {
   font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
   font-size: 13px;
   line-height: 1.4;
+}
+
+.usa-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 6px 24px;
 }
 
-.usa-banner img {
+.usa-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.usa-banner-flag {
   width: 16px;
   height: 11px;
   flex: 0 0 auto;
+  display: block;
+}
+
+.usa-banner-text {
+  color: #fff;
+}
+
+/* "Here's how you know" link with blue down arrow */
+.usa-banner-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.usa-banner-action:hover {
+  color: #e6e6e6;
+}
+
+.usa-banner-arrow {
+  font-size: 11px;
+  line-height: 1;
+  color: #3a9fe0;
+  text-decoration: none;
 }
 
 /* ---------------------------------------------------------------------------
@@ -48,7 +91,7 @@ header .header {
 }
 
 .nav {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -200,12 +243,14 @@ header .header {
   gap: 12px;
 }
 
-/* Force white button text (override boilerplate .button blue link-color). */
+/* Force white button text + NO underline (override boilerplate .button/link styles). */
 header .nav-tools a.nav-tool-btn,
 header .nav-tools a.nav-tool-btn:hover,
 header .nav-tools a.nav-tool-btn:focus,
+header .nav-tools a.nav-tool-btn:active,
 header .nav-tools a.nav-tool-btn:visited {
   color: #fff;
+  text-decoration: none;
 }
 
 .nav-tool-btn {
@@ -343,9 +388,9 @@ header .nav-tools a.nav-tool-btn:visited {
   top: 100%;
   left: 0;
   min-width: 220px;
-  background: #fff;
+  background: #071324;
   border-top: 3px solid #94191f;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   z-index: 200;
   display: none;
   flex-direction: column;
@@ -368,7 +413,7 @@ header .nav-tools a.nav-tool-btn:visited {
 
 .nav-drop-menu li a {
   display: block;
-  color: #1b1b1b;
+  color: #fff;
   font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -380,8 +425,8 @@ header .nav-tools a.nav-tool-btn:visited {
 
 .nav-drop-menu li a:hover,
 .nav-drop-menu li a:focus {
-  background: #f0f0f0;
-  color: #0c1b31;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 /* ---------------------------------------------------------------------------
