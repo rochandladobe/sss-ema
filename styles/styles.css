@@ -218,3 +218,66 @@ main .section.dark h4 {
 main .section.dark a:any-link {
   color: #73b3e7;
 }
+
+/* =============================================================
+   INNER-PAGE COMPACT HERO BAND
+   Applies to all inner pages whose first section is NOT a hero-gov
+   block (i.e. plain default-content sections with an H1).
+   Matches the sss.gov .hero--internal band: navy bg, white H1,
+   thin underline rule, left-aligned, full-bleed.
+   ============================================================= */
+
+/* Remove top padding from first section so the hero band butts up
+   against the nav bar with no white gap above. */
+main > div.section:first-of-type:not(.hero-gov-container) {
+  padding-top: 0;
+}
+
+/* The H1 inside the first section gets the full-bleed navy hero treatment.
+   Uses the viewport-width break-out technique:
+   - width: 100vw  makes it span the full viewport
+   - margin-left: calc(-1 * (section-padding-left + section-centering-offset))
+     = calc(-1 * (48px + (100vw - 100%) / 2))
+     where 100% = section width (≤1200px), 100vw = viewport width
+   - padding replicates the original readable indent on the content */
+main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
+  background-color: #162e51;
+  color: #fff;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  /* Break out of section padding + centering to span full viewport */
+  width: 100vw;
+  margin-left: calc(-1 * (48px + (100vw - 100%) / 2));
+  /* Padding: top/bottom for the band height, left/right for readable indent.
+     Left padding mirrors: section centering offset + section padding + desired text indent */
+  padding: 35px calc(48px + (100vw - 100%) / 2) 38px;
+  /* Underline rule via border-bottom */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  /* Reset margins */
+  margin-top: 0;
+  margin-bottom: 0;
+  /* Prevent overflow from creating horizontal scrollbar */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Responsive: adjust padding for smaller viewports */
+@media (width < 900px) {
+  main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
+    margin-left: calc(-1 * (32px + (100vw - 100%) / 2));
+    padding: 28px calc(32px + (100vw - 100%) / 2) 32px;
+  }
+}
+
+@media (width < 600px) {
+  main > div.section:first-of-type:not(.hero-gov-container) .default-content-wrapper > h1:first-child {
+    margin-left: calc(-1 * (24px + (100vw - 100%) / 2));
+    padding: 24px calc(24px + (100vw - 100%) / 2) 28px;
+    font-size: 1.6rem;
+  }
+}
+
+/* Prevent html/body from getting a horizontal scrollbar due to 100vw technique */
+html, body {
+  overflow-x: hidden;
+}
