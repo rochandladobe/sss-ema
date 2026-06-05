@@ -52,10 +52,10 @@
 
 /* Title next to icon */
 .cards-service > ul > li .cards-service-card-body h3 {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 700;
-  font-family: "Merriweather", serif;
-  color: #162e51;
+  font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
+  color: #1b1b1b;
   margin: 8px 0 12px;
 }
 
@@ -69,18 +69,22 @@
 
 .cards-service > ul > li .cards-service-card-body a {
   display: inline-block;
-  background-color: #005ea2;
+  background-color: transparent;
+  background-image: linear-gradient(#162e51, #0e1d33);
   color: #fff;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-weight: 700;
-  font-size: 14px;
-  font-family: "Source Sans Pro", sans-serif;
+  padding: 18px 36px;
+  border-radius: 9999px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: "Source Sans Pro", "Source Sans 3", sans-serif;
   text-decoration: none;
+  white-space: nowrap;
+  transition: background-image 0.15s ease;
 }
 
 .cards-service > ul > li .cards-service-card-body a:hover {
-  background-color: #1a4480;
+  background-image: linear-gradient(#0e1d33, #08111f);
 }
 
 /* Dark section variant */
