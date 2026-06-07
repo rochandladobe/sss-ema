@@ -90,6 +90,7 @@ header .header {
   background-color: #0c1b31;
 }
 
+.nav-wrapper > nav,
 .nav {
   max-width: 1200px;
   margin: 0 auto;
