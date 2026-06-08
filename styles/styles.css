@@ -173,8 +173,8 @@ main .section:not(.dark):not(.hero-gov-container) {
   max-width: none;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 40px;
+  padding-bottom: 48px;
   padding-left: 0;
   padding-right: 0;
 }
