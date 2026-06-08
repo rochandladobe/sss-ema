@@ -26,10 +26,12 @@
 
 .hero-gov > div {
   display: flex;
+  align-items: center;
   width: 100%;
   max-width: 1200px;
+  min-height: 600px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 60px 24px 0;
   position: relative;
   z-index: 1;
 }
