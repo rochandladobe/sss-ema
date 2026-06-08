@@ -34,7 +34,7 @@
      the image fill the full hero height (~720px) so the students are large.
      The raw PNG preserves transparency — the AEM webply pipeline flattens alpha
      to white, which would render as a white block on the navy hero. */
-  background: url("https://www.sss.gov/wp-content/uploads/2025/02/hero-bg.png") 100% 50% / contain no-repeat;
+  background: url("https://www.sss.gov/wp-content/uploads/2025/02/hero-bg.png") right bottom / contain no-repeat;
 }
 
 /* Text content - left side; sits above the background image */
