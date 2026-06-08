@@ -208,6 +208,23 @@ main .section.hero-gov-container + .section:not(.dark) {
   margin-top: -120px;
 }
 
+/* Red swoosh wave sits above "Registration for Men" white section.
+   Positioned as a ::before on the section so it always sits right above
+   the content regardless of overlap amount. */
+main .section.hero-gov-container + .section:not(.dark)::before {
+  content: "";
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1104px;
+  max-width: calc(100% - 96px);
+  height: 80px;
+  background: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/top-curve.svg") 50% 100% / contain no-repeat;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* Additional Groups (dark) section: full-bleed navy too. */
 main .section.dark {
   max-width: none;
