@@ -6,7 +6,7 @@
 
 .hero-gov {
   position: relative;
-  min-height: 600px;
+  min-height: 720px;
   display: flex;
   align-items: center;
   background-color: #0c1b31;
@@ -19,8 +19,8 @@
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 56px;
-  background: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/top-curve.svg") 50% 100% / 100% 100% no-repeat;
+  height: 70px;
+  background: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/top-curve.svg") 50% 100% / 100% auto no-repeat;
   z-index: 2;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  min-height: 600px;
+  min-height: 720px;
   margin: 0 auto;
   padding: 60px 24px 0;
   position: relative;
@@ -46,9 +46,9 @@
 .hero-gov > div > div:first-child {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -2%;
   bottom: 0;
-  width: 58%;
+  width: 62%;
 }
 
 .hero-gov > div > div:first-child picture,
