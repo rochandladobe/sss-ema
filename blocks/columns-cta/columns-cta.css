@@ -8,7 +8,7 @@
 .columns-cta::after {
   content: "";
   position: absolute;
-  top: 60px;
+  top: 0;
   width: 1px;
   height: 140px;
   background-image: linear-gradient(#999 0, rgba(153, 153, 153, 0) 100%);
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 40px 0;
+  padding: 0 0 40px;
 }
 
 .columns-cta > div > div:first-child {
@@ -97,4 +97,6 @@
   .columns-cta > div > div:last-child {
     flex-direction: row;
   }
+}
+
 }
