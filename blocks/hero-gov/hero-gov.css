@@ -34,31 +34,24 @@
   padding: 60px 24px 0;
   position: relative;
   z-index: 1;
+  /* Source PNG (transparent students + flag stars) as the container background,
+     sized `contain` and anchored right-center exactly like sss.gov. This makes
+     the image fill the full hero height (~720px) so the students are large.
+     The raw PNG preserves transparency — the AEM webply pipeline flattens alpha
+     to white, which would render as a white block on the navy hero. */
+  background: url("https://www.sss.gov/wp-content/uploads/2025/02/hero-bg.png") 100% 50% / contain no-repeat;
 }
 
-/* Text content - left side */
+/* Text content - left side; sits above the background image */
 .hero-gov > div > div:last-child {
   flex: 0 0 55%;
   max-width: 600px;
-}
-
-/* Background image - right side */
-.hero-gov > div > div:first-child {
-  position: absolute;
-  top: 0;
-  right: -2%;
-  bottom: 0;
-  width: 62%;
-  /* Use the source PNG as a background to preserve transparency.
-     The AEM webply pipeline flattens the alpha channel to white, which
-     would render as a white block on the navy hero. The raw PNG keeps
-     its transparent background so the students blend onto the navy. */
-  background: url("https://www.sss.gov/wp-content/uploads/2025/02/hero-bg.png") right bottom / contain no-repeat;
+  position: relative;
+  z-index: 1;
 }
 
 /* Hide the DA-injected webp/png picture (alpha flattened); CSS bg replaces it. */
-.hero-gov > div > div:first-child picture,
-.hero-gov > div > div:first-child img {
+.hero-gov > div > div:first-child {
   display: none;
 }
 
@@ -184,5 +177,8 @@
 
   .hero-gov.no-image > div {
     padding: 28px 24px 32px;
+  }
+}
+ 24px 32px;
   }
 }
