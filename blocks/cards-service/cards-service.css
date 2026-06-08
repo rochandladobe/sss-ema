@@ -21,12 +21,14 @@
   column-gap: 16px;
   align-items: center;
   padding: 24px 32px 24px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  /* Faint gray divider for the light (white) section. The dark-section
+     override below switches these to faint white. */
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .cards-service > ul > li:nth-child(odd) {
   padding-right: 32px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .cards-service > ul > li:nth-child(even) {
