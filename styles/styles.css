@@ -205,7 +205,7 @@ main .section.hero-gov-container {
 main .section.hero-gov-container + .section:not(.dark) {
   position: relative;
   z-index: 1;
-  margin-top: -140px;
+  margin-top: -120px;
 }
 
 /* Additional Groups (dark) section: full-bleed navy too. */
