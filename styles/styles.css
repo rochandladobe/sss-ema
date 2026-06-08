@@ -198,6 +198,16 @@ main .section.hero-gov-container {
   margin-left: calc(50% - 50vw);
 }
 
+/* The white "Registration for Men" section directly follows the hero on the
+   homepage. Pull it up so it overlaps into the navy hero (matches sss.gov,
+   where .hero__container uses padding-bottom:250px + margin-bottom:-200px so
+   the white card rises into the blue and the red swoosh sits on the seam). */
+main .section.hero-gov-container + .section:not(.dark) {
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+}
+
 /* Additional Groups (dark) section: full-bleed navy too. */
 main .section.dark {
   max-width: none;
