@@ -205,7 +205,7 @@ main .section.hero-gov-container {
 main .section.hero-gov-container + .section:not(.dark) {
   position: relative;
   z-index: 1;
-  margin-top: -120px;
+  margin-top: -40px;
 }
 
 /* Red swoosh wave sits above "Registration for Men" white section.
@@ -365,3 +365,4 @@ main > div.section:first-of-type:not(.hero-gov-container) {
     margin-bottom: 0;
   }
 }
+
