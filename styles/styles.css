@@ -163,12 +163,29 @@ main .section {
   }
 }
 
-/* Full-width navy page background with a centered white "card" for the
-   light content section (matches sss.gov hero__content-container). */
+/* Light content section: white background spans the FULL page width
+   (matches sss.gov, where the white "Registration for Men" row is edge-to-edge),
+   while the inner content stays constrained to 1200px and centered. */
 main .section:not(.dark):not(.hero-gov-container) {
   background-color: var(--color-white);
   color: var(--text-color);
   border-radius: 0;
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: 64px;
+  padding-bottom: 64px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Keep light-section content centered at the standard content width. */
+main .section:not(.dark):not(.hero-gov-container) > div {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 48px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hero section: full-bleed navy (break out of the 1200px max-width cap). */
