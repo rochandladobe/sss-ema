@@ -6,7 +6,7 @@
 
 .hero-gov {
   position: relative;
-  min-height: 720px;
+  min-height: 550px;
   display: flex;
   align-items: center;
   background-color: #0c1b31;
@@ -31,7 +31,7 @@
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  min-height: 720px;
+  min-height: 550px;
   margin: 0 auto;
   padding: 60px 24px 0;
   position: relative;
