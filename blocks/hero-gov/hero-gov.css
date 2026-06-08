@@ -19,8 +19,8 @@
   bottom: -1px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1200px;
-  max-width: 100%;
+  width: 1104px;
+  max-width: calc(100% - 96px);
   height: 80px;
   background: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/top-curve.svg") 50% 100% / contain no-repeat;
   z-index: 2;
