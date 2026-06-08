@@ -13,17 +13,10 @@
   overflow: hidden;
 }
 
+/* Wave/swoosh moved to styles.css (white section ::before) so it always
+   sits above "Registration for Men" regardless of overlap amount. */
 .hero-gov::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1104px;
-  max-width: calc(100% - 96px);
-  height: 80px;
-  background: url("https://www.sss.gov/wp-content/themes/sss/assets/visuals/css-assets/top-curve.svg") 50% 100% / contain no-repeat;
-  z-index: 2;
+  display: none;
 }
 
 .hero-gov > div {
@@ -171,6 +164,24 @@
   .hero-gov > div > div:last-child {
     flex: 1;
     max-width: 100%;
+  }
+
+  .hero-gov h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-gov.no-image > div {
+    padding: 28px 24px 32px;
+  }
+}
+ 24px 32px;
+  }
+}
+}
+}
+}
+}
+h: 100%;
   }
 
   .hero-gov h1 {
